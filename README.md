@@ -34,7 +34,7 @@ Plataforma web para divulgação de trabalhos desenvolvidos pelos alunos no âmb
 
 1. Clone este repositório
 2. Importe o ficheiro `database/schema.sql` para a sua base de dados MySQL
-3. Configure as credenciais da base de dados em `backend/config/config.php`
+3. Configure as credenciais da base de dados em `backend/config/db.php`
 4. Coloque os ficheiros na pasta do seu servidor web (htdocs, www, etc.)
 5. Aceda ao projeto através do navegador
 
@@ -66,10 +66,9 @@ Plataforma web para divulgação de trabalhos desenvolvidos pelos alunos no âmb
 
 ### Administração
 
-1. Aceda a `backend/admin/`
+1. Aceda a `backend/admin/login.php`
 2. Login com credenciais (username: admin, password: admin123)
-3. Adicione, edite ou remova projetos
-4. Aprove ou remova comentários
+3. Adicione ou remova projetos
 
 ## Base de Dados
 
@@ -84,16 +83,15 @@ A base de dados inclui as seguintes tabelas:
 
 ## API Endpoints
 
-- `GET /api/projects.php` - Listar projetos
-- `GET /api/projects.php?id={id}` - Obter projeto específico
-- `POST /api/projects.php` - Criar projeto (requer autenticação)
-- `PUT /api/projects.php` - Atualizar projeto (requer autenticação)
-- `DELETE /api/projects.php?id={id}` - Apagar projeto (requer autenticação)
-- `GET /api/courses.php` - Listar cursos
-- `GET /api/scientific_areas.php` - Listar áreas científicas
-- `GET /api/curricular_units.php` - Listar unidades curriculares
-- `POST /api/comments.php` - Criar comentário
-- `POST /api/auth.php` - Login
+- `GET /api/get_projects.php` - Listar projetos
+- `GET /api/get_project.php?id={id}` - Obter projeto específico
+- `POST /api/add_project.php` - Criar projeto (requer login)
+- `GET /api/delete_project.php?id={id}` - Apagar projeto (requer login)
+- `GET /api/get_courses.php` - Listar cursos
+- `GET /api/get_areas.php` - Listar áreas científicas
+- `GET /api/get_units.php` - Listar unidades curriculares
+- `POST /api/add_comment.php` - Criar comentário
+- `POST /api/login.php` - Fazer login
 
 ## Autores
 

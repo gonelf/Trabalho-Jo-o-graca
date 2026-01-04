@@ -1,0 +1,120 @@
+/* CSS simples para o admin */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Login */
+.login-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.login-box h1 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.login-box input {
+    width: 250px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-box button {
+    background: #667eea;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-box button:hover {
+    background: #5568d3;
+}
+
+/* Admin Layout */
+.admin {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background: #2c3e50;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #34495e;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 30px;
+}
+
+.conteudo h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Botoes */
+.btn {
+    background: #667eea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background: #5568d3;
+}
+
+.btn-delete {
+    background: #e74c3c;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+/* Geral */
+input, textarea, select {
+    font-family: Arial, sans-serif;
+}
