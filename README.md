@@ -30,13 +30,74 @@ Plataforma web para divulgação de trabalhos desenvolvidos pelos alunos no âmb
 - MySQL 5.7 ou superior
 - Servidor Apache (XAMPP, WAMP ou similar)
 
-### Passos
+### Passo a Passo Detalhado (XAMPP + phpMyAdmin)
 
-1. Clone este repositório
-2. Importe o ficheiro `database/schema.sql` para a sua base de dados MySQL
-3. Configure as credenciais da base de dados em `backend/config/db.php`
-4. Coloque os ficheiros na pasta do seu servidor web (htdocs, www, etc.)
-5. Aceda ao projeto através do navegador
+#### 1. Instalar o XAMPP
+
+- Descarregue o XAMPP em: https://www.apachefriends.org/
+- Instale normalmente (deixar tudo por defeito)
+- Abra o XAMPP Control Panel
+- Inicie o **Apache** e o **MySQL** (clicar em "Start")
+
+#### 2. Copiar os Ficheiros do Projeto
+
+- Clone ou descarregue este repositório
+- Copie a pasta `Trabalho-Jo-o-graca` para `C:\xampp\htdocs\`
+- O caminho final deve ser: `C:\xampp\htdocs\Trabalho-Jo-o-graca\`
+
+#### 3. Criar a Base de Dados no phpMyAdmin
+
+- Abra o navegador e vá a: `http://localhost/phpmyadmin`
+- Clique em **"Novo"** no menu lateral (ou "New")
+- Nome da base de dados: `escs_portfolio`
+- Collation: `utf8mb4_unicode_ci`
+- Clique em **"Criar"** (ou "Create")
+
+#### 4. Importar o Schema SQL
+
+- Com a base de dados `escs_portfolio` selecionada
+- Clique no separador **"Importar"** (ou "Import")
+- Clique em **"Escolher ficheiro"** (ou "Choose file")
+- Navegue até `C:\xampp\htdocs\Trabalho-Jo-o-graca\database\schema.sql`
+- Clique em **"Executar"** (ou "Go") no fundo da página
+- Deve aparecer uma mensagem de sucesso
+- Verifique se as tabelas foram criadas (deve ver: users, courses, projects, etc.)
+
+#### 5. Configurar a Ligação à Base de Dados
+
+- Abra o ficheiro `backend/config/db.php` num editor de texto
+- Verifique se está assim (normalmente já está correto):
+  ```php
+  $host = "localhost";
+  $dbname = "escs_portfolio";
+  $username = "root";
+  $password = "";
+  ```
+- Se a sua instalação MySQL tiver password, altere a linha `$password = "";`
+
+#### 6. Testar o Projeto
+
+- Abra o navegador
+- **Frontend**: `http://localhost/Trabalho-Jo-o-graca/frontend/index.html`
+- **Admin**: `http://localhost/Trabalho-Jo-o-graca/backend/admin/login.php`
+  - Username: `admin`
+  - Password: `admin123`
+
+#### 7. Problemas Comuns
+
+**Erro "Access denied for user"**
+- Verifique se o MySQL está a correr no XAMPP
+- Verifique a password em `backend/config/db.php`
+
+**Erro "Table doesn't exist"**
+- Importe novamente o ficheiro `schema.sql` no phpMyAdmin
+
+**Página em branco**
+- Ative os erros PHP: abra `php.ini` do XAMPP e mude `display_errors = On`
+- Reinicie o Apache no XAMPP
+
+**Imagens não aparecem**
+- Verifique se a pasta `backend/uploads/` tem permissões de escrita
 
 ## Estrutura do Projeto
 
