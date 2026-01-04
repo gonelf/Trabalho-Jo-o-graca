@@ -1,0 +1,19 @@
+# Ficheiros de upload
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Ficheiros de configuração local
+backend/config/config.local.php
+
+# Ficheiros do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

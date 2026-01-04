@@ -1,0 +1,16 @@
+# Proteção de ficheiros sensíveis
+<FilesMatch "\.(env|sql|log|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevenir listagem de diretórios
+Options -Indexes
+
+# Ativar rewrite engine
+RewriteEngine On
+
+# Redirecionar todas as requisições para index.php (se necessário)
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php/$1 [L]

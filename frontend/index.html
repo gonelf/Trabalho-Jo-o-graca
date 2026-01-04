@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCS Portfolio - Laboratório de Aplicações Interativas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <h1>ESCS Portfolio</h1>
+            <p>Laboratório de Aplicações Interativas</p>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-link active" onclick="showAllProjects()">Todos os Projetos</a>
+            <a href="#" class="nav-link" onclick="showFeatured()">Em Destaque</a>
+        </div>
+    </nav>
+
+    <!-- Filtros -->
+    <section class="filters">
+        <div class="container">
+            <h2>Filtrar Projetos</h2>
+
+            <div class="filter-group">
+                <label>Pesquisar:</label>
+                <input type="text" id="searchInput" placeholder="Procurar por título, descrição ou aluno...">
+            </div>
+
+            <div class="filter-group">
+                <label>Curso:</label>
+                <select id="courseFilter">
+                    <option value="">Todos os cursos</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Área Científica:</label>
+                <select id="areaFilter">
+                    <option value="">Todas as áreas</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Unidade Curricular:</label>
+                <select id="unitFilter">
+                    <option value="">Todas as unidades</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary" onclick="applyFilters()">Aplicar Filtros</button>
+            <button class="btn btn-secondary" onclick="clearFilters()">Limpar</button>
+        </div>
+    </section>
+
+    <!-- Grade de Projetos -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 id="sectionTitle">Todos os Projetos</h2>
+
+            <div id="projectsGrid" class="projects-grid">
+                <p>A carregar projetos...</p>
+            </div>
+
+            <!-- Paginação -->
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </section>
+
+    <!-- Modal do Projeto -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>ESCS 2025-2026 | Licenciatura Audiovisual e Multimédia</p>
+            <p>Projeto desenvolvido por estudantes de LAI</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
